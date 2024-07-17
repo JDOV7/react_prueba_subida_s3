@@ -4,6 +4,29 @@ import viteLogo from "/vite.svg";
 import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import "./App.css";
 
+
+/**
+ * PAra la subida de archivo desde el front se debe configurar el bucket
+ * 
+ * CONFIGURACION CORS BUCKET:
+ * [
+    {
+        "AllowedHeaders": [
+            "*"
+        ],
+        "AllowedMethods": [
+            "PUT"
+        ],
+        "AllowedOrigins": [
+            "http://localhost:5173"
+        ],
+        "ExposeHeaders": []
+    }
+]
+ * 
+ *
+ * **/
+
 function App() {
   const [count, setCount] = useState(0);
   const [fileV, setFile] = useState();
